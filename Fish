@@ -1,0 +1,73 @@
+import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
+
+/**
+ * Commands actor Fish
+ * 
+ * Sebastian Vilchis 
+ * 6/8/18)
+ */
+public class Fish extends Actor
+{
+    /**
+     * Act - do whatever the Fish wants to do. This method is called whenever
+     * the 'Act' or 'Run' button gets pressed in the environment.
+     */
+    String fishName;
+    double fishSpeed;
+    int Fish;
+    static boolean hit = false;
+   
+    
+     public Fish(int speed)
+    {
+    fishName = "none";
+    fishSpeed=speed;
+    
+    }
+       public Fish(String initialFishName, double initialFishSpeed)
+    {
+     fishName=initialFishName;
+     fishSpeed=initialFishSpeed;
+    }//end zero construcot method
+
+
+
+    public void act() 
+    {
+         move(Greenfoot.getRandomNumber(5));
+        turn(Greenfoot.getRandomNumber(1));
+        if(isAtEdge())
+        {
+            turn(Greenfoot.getRandomNumber(2));
+        }//end isAtEdge
+        
+        World myWorld=getWorld();
+        myWorld.showText(toString(), 50,50);
+        
+        Actor dead = null;
+        dead = getOneObjectAtOffset (3,3, Bear.class);
+        isDead();
+       
+        
+        if((dead!=null))
+        {
+            myWorld.removeObject(dead);
+            hit = true;
+        }//end dead 
+        
+        if(isAtEdge())
+        {
+            turn(Greenfoot.getRandomNumber(50));
+        }
+    }    
+    public void isDead()
+    {
+        
+        {
+            getWorld().showText("GAME OVER", 300, 200);
+        }
+        
+        
+        
+    }
+   }// end Fish 
