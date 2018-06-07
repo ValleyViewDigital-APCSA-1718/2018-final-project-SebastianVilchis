@@ -1,0 +1,47 @@
+import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
+
+/**
+ * Fish's Revenge
+ * 
+ * Sebastian Vilchis
+ * 6/8/18
+ */
+public class MyWorld extends World
+
+{
+    private int time = 300; 
+    private int count = 0;
+    /**
+     * Constructor for objects of class MyWorld
+     */
+    public MyWorld()
+    {
+        super(600,400,1);
+        addObject (new Bear(), 450,250);
+      for(int i = 0; i < 20; i++)
+      {
+          if(true)
+          {
+              addObject (new Fish(20), 20,50);
+            }
+      }
+    }//end if statement 
+    
+    public int getCount()
+    {
+        return count ++;
+    }//end getCount
+    
+    public int time()
+    {
+    time = 300-(int)(getCount()/60);
+    if(time <=0)
+    {
+        time=0;
+        return time;
+    }
+    return time;
+    }
+    
+    public String toString(){String output = new String(); output = ("Time Remaining" + time());return output;}
+}//end toString
