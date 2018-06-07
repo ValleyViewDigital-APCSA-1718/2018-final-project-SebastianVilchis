@@ -1,0 +1,84 @@
+import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
+
+/**
+ * Commands actor Bear
+ * 
+ * Sebastian Vilchis 
+ * 6/8/18)
+ */
+public class Bear extends Actor
+{
+    /**
+     * Act - do whatever the Bear wants to do. This method is called whenever
+     * the 'Act' or 'Run' button gets pressed in the environment.
+     */
+    String bearName;
+    double bearSpeed;
+    int Bear;
+    int bearDied;
+    
+
+   
+    
+    
+    
+    public void act() 
+    {
+        // Add your action code here.
+        move(Greenfoot.getRandomNumber(5));
+        turn(Greenfoot.getRandomNumber(1));
+        if(isAtEdge())
+        {
+            turn(Greenfoot.getRandomNumber(50));
+        }    
+    getWorld().showText(toString(), 50,50);
+    
+    if(Greenfoot.isKeyDown("up"))
+    {
+        setRotation(0);
+        turn(-90);
+        move(4);
+        
+    }
+    
+    if(Greenfoot.isKeyDown("down"))
+    {
+        setRotation(0);
+        turn(90);
+        move(4);
+    }
+    
+     if(Greenfoot.isKeyDown("right"))
+    {
+        setRotation(0);
+        turn(360);
+        move(4);
+    }
+    
+     if(Greenfoot.isKeyDown("left"))
+    {
+        setRotation(0);
+        turn(-180);
+        move(4);
+    }
+    
+    
+    }//end isKeyDown 
+    
+    
+    public Bear()
+   
+    {
+    bearName = "none";
+    bearSpeed=40.0;
+   
+    }//end public bear
+    
+    public Bear(String initialBearName, double initialBearSpeed)
+    {
+     bearName=initialBearName;
+     bearSpeed=initialBearSpeed;
+    }
+
+    }
+
