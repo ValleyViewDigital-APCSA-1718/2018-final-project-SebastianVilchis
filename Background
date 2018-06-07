@@ -1,0 +1,24 @@
+import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
+
+/**
+ * Places actors into space background
+ * 
+ * Sebastian Vilchis
+ * 6/8/18
+ */
+public class Background extends World
+{
+
+    /**
+     * Constructor for objects of class Background.
+     * 
+     */
+    public Background()
+    {    
+        // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
+        super(600, 400, 1); 
+        addObject(new Bear(),30,150);
+        addObject(new Fish(80),5,400);
+        
+    }
+}
